@@ -1,6 +1,7 @@
 var _ = require('underscore');
 
-module.exports = function(rules, arguments) {
+// wash params by rules
+exports.args = function(rules, arguments) {
     
     if (!_.isArray(rules)) return false;
     if (_.isEmpty(arguments)) return [];
@@ -25,4 +26,10 @@ module.exports = function(rules, arguments) {
 
     return params;
 
+};
+
+// shorthand of exports.args
+exports.parse = function(args, rules, callback) {
+    var params = exports.args(rules, args);
+    return callback.apply(callback, params);
 };
