@@ -1,0 +1,24 @@
+{
+  "name": "paramrule",
+  "version": "0.0.0",
+  "description": "a simple parameters rules manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/turingou/paramrule.git"
+  },
+  "keywords": [
+    "params",
+    "param",
+    "parameter",
+    "parameters"
+  ],
+  "author": "turing <o.u.turing@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/turingou/paramrule/issues"
+  }
+}
