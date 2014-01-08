@@ -4,12 +4,38 @@ a simple parameters rules manager
 
 ### Installation
 
-[![NPM](https://nodei.co/npm/paramrule.png)](https://nodei.co/npm/paramrule/) [![NPM](https://nodei.co/npm-dl/paramrule.png?months=6)](https://nodei.co/npm/paramrule/)
-
+```
+$ npm install paramrule
+```
 
 ### Example
 ````javascript
 var paramrule = require('paramrule');
+
+// do something, no matter if `query` provides or not.
+var doSomething = function(query, callback) {
+    if (!query) return callback('no query ! auto query by default !');
+    return callback('query is :' + query);
+};
+
+var wrapper = function() {
+    // the very first param is optional
+    // yet the last one are required
+    var washedParams = paramrule(['', '*'], arguments);
+    // is it COOL? NOOOOT!
+    doSomething.apply(doSomething, washedParams);
+}
+
+// let's have a try
+wrapper('any params will be ok', function(ret) {
+    console.log(ret);
+});
+
+// another try without first param (query)
+wrapper(function(ret) {
+    console.log(ret);
+});
+
 ````
 
 ### API
