@@ -1,6 +1,6 @@
 {
   "name": "paramrule",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a simple parameters rules manager",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/turingou/paramrule/issues"
+  },
+  "dependencies": {
+    "underscore": "*"
   }
 }
