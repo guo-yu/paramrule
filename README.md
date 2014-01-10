@@ -21,9 +21,14 @@ var doSomething = function(query, callback) {
 var wrapper = function() {
     // the very first param is optional
     // yet the last one are required
-    var washedParams = paramrule(['', '*'], arguments);
+    var washedParams = paramrule.args(['', '*'], arguments);
     // is it COOL? NOOOOT!
     doSomething.apply(doSomething, washedParams);
+}
+
+// a shorthands of paramrule.args
+var wrapper = function() {
+    paramrule.parse(arguments, ['','*'], doSomething);
 }
 
 // let's have a try
